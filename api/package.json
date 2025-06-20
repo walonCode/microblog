@@ -3,8 +3,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "preinstall": "cd .. && npm i",
-    "prepare": "cd .. && npm i",
     "dev": "tsx watch index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
