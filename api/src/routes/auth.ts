@@ -33,4 +33,19 @@ app.post("/token", async (c) => {
   }
 });
 
+
+
+app.post("/register", async(c) => {
+  try{
+    const body = await c.req.json()
+
+    const user = await db.select().from(usersTable).where(eq(usersTable.username, body.username))
+  }catch(err){
+    return c.json({
+      ok:false,
+      error: err
+    },500)
+  }
+})
+
 export default app;
