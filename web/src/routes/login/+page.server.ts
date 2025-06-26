@@ -1,5 +1,5 @@
-import { fail, type Actions } from '@sveltejs/kit';
 import { PUBLIC_API_BASE_URL } from '$env/static/public';
+import { type Actions, fail } from '@sveltejs/kit';
 
 export const actions = {
 	default: async ({ request, fetch }) => {
@@ -19,7 +19,7 @@ export const actions = {
 				console.log(error);
 				return fail(400, { message: error });
 			}
-		} catch (_e: unknown) {
+		} catch (_e: any) {
 			console.log(_e);
 			return fail(400, { message: _e.message });
 		}

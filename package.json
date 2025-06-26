@@ -4,12 +4,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build:web": "npm run build --prefix web",
-    "web": "npm run dev --prefix web",
-    "api": "npm run dev --prefix api",
-    "format": "npm run format --prefix web && npm run format --prefix api"
+    "prepare": "npx lefthook install",
+    "web": "npm run dev -w web",
+    "api": "npm run dev -w api",
+    "format": "npm run format -w web && npm run check -w api"
   },
+  "workspaces": [
+    "web",
+    "api"
+  ],
   "devDependencies": {
+    "@biomejs/biome": "^2.0.5",
     "lefthook": "^1.11.14"
   }
 }
